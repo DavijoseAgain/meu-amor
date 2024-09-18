@@ -17,26 +17,28 @@ body{
     justify-content: center;
     text-align:center;
     flex-direction: column;
-    height: 1200px;
+    height: 100%;
     width: 80%;
     letter-spacing: -1px;
 }
 
 .texto{
-    text-shadow: 2px 1px 0 #f4b5eb;
+    text-shadow: 2px 1px 0 rgb(167, 126, 161);
     
 }
 
 .botao{
-    margin-top: 8%;
+    margin-top: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align:center;
-    background-color: #eea1e3;
-    width: 43%;
+    background-color: #a59cc9;
+    width: 300px;
     height: 10%;
     color: #363232;
     text-shadow: 2px 1px 0 #494343;
     border-radius: 4%;
 }
+
+
