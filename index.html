@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="texto" id="texto">
+            <h1>O cão, no Brasil também chamado de cachorro, 
+                é um mamífero carnívoro da família dos canídeos, subespécie do lobo, e talvez o mais antigo animal domesticado pelo ser humano. 
+                Teorias postulam que surgiu do lobo cinzento no continente asiático há mais de 100 000 anos.</h1>
+        </div>
+        <div class="botao" id="botao">
+            <h1>Próximo</h1>
+        </div>
+    </div>
+
+    <script>
+        const textos = [
+            'O cão, no Brasil também chamado de cachorro, é um mamífero carnívoro da família dos canídeos, subespécie do lobo, e talvez o mais antigo animal domesticado pelo ser humano. Teorias postulam que surgiu do lobo cinzento no continente asiático há mais de 100 000 anos.',
+            'O gato doméstico é um pequeno mamífero carnívoro da família dos felídeos, muito popular como animal de estimação. A relação do gato com os humanos remonta há milhares de anos.',
+            'O elefante é o maior animal terrestre que existe, e pertence à família Elephantidae. Ele é conhecido por sua inteligência, memória e pelo uso de suas longas presas de marfim.',
+            'As tartarugas marinhas são animais da ordem Testudines que vivem nos oceanos e estão ameaçadas de extinção devido à ação humana, especialmente a poluição e a pesca.'
+        ];
+
+        let index = 0; 
+
+        const botao = document.getElementById('botao');
+        const texto = document.getElementById('texto');
+        const body = document.body;
+
+        botao.addEventListener('click', function() {
+         
+            index = (index + 1) % textos.length;
+            texto.innerHTML = `<h1>${textos[index]}</h1>`; 
+
+            if (index === textos.length - 1) {
+                body.style.backgroundImage = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_LGqNXFXItlNqfd7sMqrV_lxdeewSoQWv5A&usqp=CAU')";
+                body.style.backgroundSize = 'cover'; // Para ajustar a imagem ao fundo
+                body.style.backgroundPosition = 'center 410px'; // Ajusta a imagem para baixo
+                body.style.backgroundColor = ''; 
+                texto.style.color = '#131212';
+                texto.style.textShadow = '2px 1px 0 #494343';
+                botao.style.backgroundColor = '#1f1d1d';
+                botao.style.color = 'rgb(240, 240, 240)';
+            } else {
+                // Volta ao fundo original se não for o último texto
+                body.style.backgroundImage = 'none'; // Remove a imagem de fundo
+                body.style.backgroundColor = '#1f1d1d'; // Cor original de fundo
+                texto.style.color = ''; // Reseta a cor do texto
+                texto.style.textShadow = ''; // Reseta o texto sombra
+                botao.style.backgroundColor = '#eea1e3'; // Cor original do botão
+                botao.style.color = '#363232'; // Cor original do texto do botão
+            }
+        });
+    </script>
+</body>
+</html>
